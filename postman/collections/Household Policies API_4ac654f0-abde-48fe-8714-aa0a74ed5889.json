@@ -1,0 +1,306 @@
+{
+    "info": {
+        "_postman_id": "7e27d3ec-e3b4-49cc-9bf2-24a40346f9e9",
+        "name": "Household Policies API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "account/{account Id}",
+            "item": [
+                {
+                    "name": "address/all",
+                    "item": [
+                        {
+                            "name": "Get all addresses for personaccount (account table) and its properties (customerproperty table)",
+                            "id": "b84e443f-e4cd-4d28-a924-be2a791227f2",
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "application id",
+                                        "key": "client_id",
+                                        "value": "et occaecat aliqua labore sint"
+                                    },
+                                    {
+                                        "description": "application secret",
+                                        "key": "client_secret",
+                                        "value": "et occaecat aliqua labore sint"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/account/:accountId/address/all",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "account",
+                                        ":accountId",
+                                        "address",
+                                        "all"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "id": "3c7e0f6f-7d3c-46ba-9dd9-4ca24a9db643",
+                                            "key": "accountId",
+                                            "value": "et occaecat aliqua labore sint",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "id": "3d87c4e5-9042-4803-88bf-b13b093e95ec",
+                                    "name": "response",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                            {
+                                                "description": "application id",
+                                                "key": "client_id",
+                                                "value": "et occaecat aliqua labore sint"
+                                            },
+                                            {
+                                                "description": "application secret",
+                                                "key": "client_secret",
+                                                "value": "et occaecat aliqua labore sint"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/account/:accountId/address/all",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "account",
+                                                ":accountId",
+                                                "address",
+                                                "all"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "accountId"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update all addresses for personaccount (account table) and its properties (customerproperty table)",
+                            "id": "58c71982-cb5e-41a6-8728-194e00ca56b1",
+                            "request": {
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "description": "application id",
+                                        "key": "client_id",
+                                        "value": "et occaecat aliqua labore sint"
+                                    },
+                                    {
+                                        "description": "application secret",
+                                        "key": "client_secret",
+                                        "value": "et occaecat aliqua labore sint"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"firstname\": \"Anderson\",\n    \"lastname\": \"Jacobs\",\n    \"addrline1\": \"12481 Garlieb Drive\",\n    \"city\": \"Huntley\",\n    \"state\": \"IL\",\n    \"zip\": \"60142\",\n    \"country\": \"United States\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/account/:accountId/address/all",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "account",
+                                        ":accountId",
+                                        "address",
+                                        "all"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "id": "3f1c81fa-91fc-45ce-b8aa-cae1ab6dd88f",
+                                            "key": "accountId",
+                                            "value": "et occaecat aliqua labore sint",
+                                            "description": "(Required) "
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "id": "39ac29e8-1c27-4fd5-adb6-c0cf62ec4ebb",
+                                    "name": "response",
+                                    "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                            {
+                                                "description": "application id",
+                                                "key": "client_id",
+                                                "value": "et occaecat aliqua labore sint"
+                                            },
+                                            {
+                                                "description": "application secret",
+                                                "key": "client_secret",
+                                                "value": "et occaecat aliqua labore sint"
+                                            }
+                                        ],
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n    \"firstname\": \"Anderson\",\n    \"lastname\": \"Jacobs\",\n    \"addrline1\": \"12481 Garlieb Drive\",\n    \"city\": \"Huntley\",\n    \"state\": \"IL\",\n    \"zip\": \"60142\",\n    \"country\": \"United States\"\n}"
+                                        },
+                                        "url": {
+                                            "raw": "{{baseUrl}}/account/:accountId/address/all",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "account",
+                                                ":accountId",
+                                                "address",
+                                                "all"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "accountId"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "text",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "text/plain"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "id": "3075718e-50ab-4ce0-bde8-56265187121b"
+                },
+                {
+                    "name": "Get aggregated and enriched policy 360 data for account dashboard",
+                    "id": "f95f9070-7a69-4b4b-a1b4-159f3660f53e",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "application id",
+                                "key": "client_id",
+                                "value": "et occaecat aliqua labore sint"
+                            },
+                            {
+                                "description": "application secret",
+                                "key": "client_secret",
+                                "value": "et occaecat aliqua labore sint"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/account/:accountId/policyholder360",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "account",
+                                ":accountId",
+                                "policyholder360"
+                            ],
+                            "variable": [
+                                {
+                                    "id": "e81288df-0908-4462-925c-27f9ca55fdff",
+                                    "key": "accountId",
+                                    "value": "et occaecat aliqua labore sint",
+                                    "description": "(Required) "
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "f384f72e-0784-428c-86df-4af84bb862dd",
+                            "name": "response",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "application id",
+                                        "key": "client_id",
+                                        "value": "et occaecat aliqua labore sint"
+                                    },
+                                    {
+                                        "description": "application secret",
+                                        "key": "client_secret",
+                                        "value": "et occaecat aliqua labore sint"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/account/:accountId/policyholder360",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "account",
+                                        ":accountId",
+                                        "policyholder360"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "accountId"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"PolicyHolder\": {\n  \"Billing_Address\": {\n   \"city\": \"Example\",\n   \"country\": \"US\",\n   \"postal_code\": \"Example\",\n   \"state\": \"Example\",\n   \"street\": \"Example\"\n  },\n  \"id\": \"Example\",\n  \"first_name\": \"Example\",\n  \"last_name\": \"Example\",\n  \"Mailing_Address\": {\n   \"city\": \"Example\",\n   \"country\": \"US\",\n   \"postal_code\": \"Example\",\n   \"state\": \"Example\",\n   \"street\": \"Example\"\n  },\n  \"Shipping_Address\": {\n   \"city\": \"Example\",\n   \"country\": \"US\",\n   \"postal_code\": \"Example\",\n   \"state\": \"Example\",\n   \"street\": \"Example\"\n  },\n  \"phone\": \"+44-555-111-1111\",\n  \"title\": \"Example\",\n  \"birthdate\": \"2020-10-20T16:55:07.132\",\n  \"is_deleted\": true,\n  \"email\": \"me@example.com\",\n  \"created_date\": \"2020-10-20T16:55:07.132\"\n },\n \"Policies\": [\n  {\n   \"effective_date\": \"2020-10-20T15:32:33.664\",\n   \"discount\": 1,\n   \"name\": \"Example\",\n   \"type\": \"Example\",\n   \"owner_id\": \"Example\",\n   \"is_active\": true,\n   \"is_renewed\": true,\n   \"nameinsured_id\": \"Example\",\n   \"id\": \"Example\",\n   \"created_date\": \"2020-10-20T15:32:22.223\",\n   \"cancellation_date\": \"2020-10-20T15:32:47.625\",\n   \"expiration_date\": \"2020-10-20T15:32:59.910\",\n   \"date_renewed\": \"2020-10-20T15:37:17.638\"\n  },\n  {\n   \"effective_date\": \"2020-10-20T15:32:33.664\",\n   \"discount\": 1,\n   \"name\": \"Example\",\n   \"type\": \"Example\",\n   \"owner_id\": \"Example\",\n   \"is_active\": true,\n   \"is_renewed\": true,\n   \"nameinsured_id\": \"Example\",\n   \"id\": \"Example\",\n   \"created_date\": \"2020-10-20T15:32:22.223\",\n   \"cancellation_date\": \"2020-10-20T15:32:47.625\",\n   \"expiration_date\": \"2020-10-20T15:32:59.910\",\n   \"date_renewed\": \"2020-10-20T15:37:17.638\"\n  }\n ],\n \"Properties\": [\n  {\n   \"record_type_id\": \"0123A000001DkDDQA0\",\n   \"owner_id\": \"Example\",\n   \"id\": \"Example\",\n   \"primary_owner_id\": \"Example\",\n   \"name\": \"Example\",\n   \"created_date\": \"2020-10-20T17:10:06.800\",\n   \"Info\": {\n    \"make\": \"Example\",\n    \"model\": \"Example\",\n    \"year\": 2005\n   },\n   \"primary_use\": \"Personal\",\n   \"Address\": {\n    \"city\": \"Example\",\n    \"country\": \"US\",\n    \"postal_code\": \"Example\",\n    \"state\": \"Example\",\n    \"street\": \"Example\"\n   }\n  },\n  {\n   \"record_type_id\": \"0123A000001DkDDQA0\",\n   \"owner_id\": \"Example\",\n   \"id\": \"Example\",\n   \"primary_owner_id\": \"Example\",\n   \"name\": \"Example\",\n   \"created_date\": \"2020-10-20T17:10:06.800\",\n   \"Info\": {\n    \"make\": \"Example\",\n    \"model\": \"Example\",\n    \"year\": 2005\n   },\n   \"primary_use\": \"Personal\",\n   \"Address\": {\n    \"city\": \"Example\",\n    \"country\": \"US\",\n    \"postal_code\": \"Example\",\n    \"state\": \"Example\",\n    \"street\": \"Example\"\n   }\n  }\n ]\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "129179ab-2224-459a-a985-6d7340c9d41f"
+        }
+    ],
+    "variable": [
+        {
+            "id": "6e5af023-3e40-44c9-9c0b-e6f877f2234d",
+            "key": "baseUrl",
+            "value": "http://localhost:8081",
+            "type": "string"
+        }
+    ]
+}

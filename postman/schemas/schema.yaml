@@ -1,0 +1,461 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "household-policies-api",
+    "version": "v1"
+  },
+  "host": "localhost:8081",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/account/{accountId}/address/all": {
+      "get": {
+        "operationId": "Get all addresses for personaccount (account table) and its properties (customerproperty table)",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "client_id",
+            "description": "application id",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "client_secret",
+            "description": "application secret",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {}
+          }
+        }
+      },
+      "put": {
+        "operationId": "Update all addresses for personaccount (account table) and its properties (customerproperty table)",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "client_id",
+            "description": "application id",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "client_secret",
+            "description": "application secret",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "$ref": "#/definitions/PersonAccountAddress"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/account/{accountId}/policyholder360": {
+      "get": {
+        "operationId": "Get aggregated and enriched policy 360 data for account dashboard",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "accountId",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "client_id",
+            "description": "application id",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "client_secret",
+            "description": "application secret",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "PolicyHolder",
+                "Policies",
+                "Properties"
+              ],
+              "properties": {
+                "PolicyHolder": {
+                  "$ref": "#/definitions/Account"
+                },
+                "Policies": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Policy"
+                  }
+                },
+                "Properties": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Property"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PersonAccountAddress": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "firstname",
+        "lastname",
+        "addrline1",
+        "city",
+        "state",
+        "zip",
+        "country"
+      ],
+      "properties": {
+        "firstname": {
+          "example": "Anderson",
+          "type": "string"
+        },
+        "lastname": {
+          "example": "Jacobs",
+          "type": "string"
+        },
+        "addrline1": {
+          "example": "12481 Garlieb Drive",
+          "type": "string"
+        },
+        "city": {
+          "example": "Huntley",
+          "type": "string"
+        },
+        "state": {
+          "example": "IL",
+          "type": "string"
+        },
+        "zip": {
+          "example": "60142",
+          "type": "string"
+        },
+        "country": {
+          "example": "United States",
+          "type": "string"
+        }
+      }
+    },
+    "Account": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "Billing_Address",
+        "id",
+        "first_name",
+        "last_name"
+      ],
+      "properties": {
+        "Billing_Address": {
+          "$ref": "#/definitions/Address"
+        },
+        "Mailing_Address": {
+          "$ref": "#/definitions/Address"
+        },
+        "Shipping_Address": {
+          "$ref": "#/definitions/Address"
+        },
+        "id": {
+          "example": "Example",
+          "type": "string"
+        },
+        "first_name": {
+          "example": "Example",
+          "type": "string"
+        },
+        "phone": {
+          "$ref": "#/definitions/Phone"
+        },
+        "title": {
+          "example": "Example",
+          "type": "string"
+        },
+        "last_name": {
+          "example": "Example",
+          "type": "string"
+        },
+        "birthdate": {
+          "example": "2020-10-20T16:55:07.132",
+          "type": "string",
+          "format": "date-time-only"
+        },
+        "is_deleted": {
+          "default": false,
+          "example": true,
+          "type": "boolean"
+        },
+        "email": {
+          "$ref": "#/definitions/Email"
+        },
+        "created_date": {
+          "example": "2020-10-20T16:55:07.132",
+          "type": "string",
+          "format": "date-time-only"
+        }
+      }
+    },
+    "Policy": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "effective_date",
+        "discount",
+        "name",
+        "type",
+        "owner_id",
+        "is_active",
+        "is_renewed",
+        "nameinsured_id",
+        "id"
+      ],
+      "properties": {
+        "created_date": {
+          "example": "2020-10-20T15:32:22.223",
+          "type": "string",
+          "format": "date-time-only"
+        },
+        "effective_date": {
+          "example": "2020-10-20T15:32:33.664",
+          "type": "string",
+          "format": "date-time-only"
+        },
+        "cancellation_date": {
+          "example": "2020-10-20T15:32:47.625",
+          "type": "string",
+          "format": "date-time-only"
+        },
+        "expiration_date": {
+          "example": "2020-10-20T15:32:59.910",
+          "type": "string",
+          "format": "date-time-only"
+        },
+        "discount": {
+          "example": 1,
+          "type": "integer",
+          "format": "int"
+        },
+        "name": {
+          "example": "Example",
+          "type": "string"
+        },
+        "type": {
+          "example": "Example",
+          "type": "string"
+        },
+        "owner_id": {
+          "example": "Example",
+          "type": "string"
+        },
+        "is_active": {
+          "example": true,
+          "type": "boolean"
+        },
+        "is_renewed": {
+          "example": true,
+          "type": "boolean"
+        },
+        "nameinsured_id": {
+          "example": "Example",
+          "type": "string"
+        },
+        "date_renewed": {
+          "example": "2020-10-20T15:37:17.638",
+          "type": "string",
+          "format": "date-time-only"
+        },
+        "id": {
+          "example": "Example",
+          "type": "string"
+        }
+      }
+    },
+    "Property": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "record_type_id",
+        "owner_id",
+        "id",
+        "primary_owner_id",
+        "name"
+      ],
+      "properties": {
+        "record_type_id": {
+          "enum": [
+            "0123A000001DkDFQA0",
+            "0123A000001DkDGQA0",
+            "0123A000001DkDHQA0",
+            "0123A000001DkDDQA0"
+          ],
+          "example": "0123A000001DkDDQA0",
+          "type": "string"
+        },
+        "owner_id": {
+          "example": "Example",
+          "type": "string"
+        },
+        "id": {
+          "example": "Example",
+          "type": "string"
+        },
+        "created_date": {
+          "example": "2020-10-20T17:10:06.800",
+          "type": "string",
+          "format": "date-time-only"
+        },
+        "primary_owner_id": {
+          "example": "Example",
+          "type": "string"
+        },
+        "name": {
+          "example": "Example",
+          "type": "string"
+        },
+        "Info": {
+          "$ref": "#/definitions/PropertyInfo"
+        },
+        "primary_use": {
+          "enum": [
+            "Business",
+            "Personal"
+          ],
+          "example": "Personal",
+          "type": "string"
+        },
+        "Address": {
+          "$ref": "#/definitions/Address"
+        }
+      }
+    },
+    "Address": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "city",
+        "country",
+        "postal_code",
+        "state",
+        "street"
+      ],
+      "properties": {
+        "city": {
+          "example": "Example",
+          "type": "string"
+        },
+        "country": {
+          "default": "US",
+          "example": "US",
+          "type": "string"
+        },
+        "postal_code": {
+          "example": "Example",
+          "type": "string"
+        },
+        "state": {
+          "example": "Example",
+          "type": "string"
+        },
+        "street": {
+          "example": "Example",
+          "type": "string"
+        }
+      }
+    },
+    "Phone": {
+      "example": "+44-555-111-1111",
+      "type": "string",
+      "pattern": "^\\+?[0-9\\.|-]{10,15}$"
+    },
+    "Email": {
+      "example": "me@example.com",
+      "type": "string",
+      "pattern": "^.+@.+\\..+$"
+    },
+    "PropertyInfo": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "make": {
+          "example": "Example",
+          "type": "string"
+        },
+        "model": {
+          "example": "Example",
+          "type": "string"
+        },
+        "year": {
+          "example": 2005,
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
